@@ -1,0 +1,91 @@
+.card {
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  padding: 15px;
+}
+.image-container {
+  margin: auto;
+  position: relative;
+}
+.food {
+  border-radius: 15px;
+  position: relative;
+}
+.restaurant {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  font-weight: 500;
+  margin: 0;
+}
+.cuisines {
+  font-size: 1.2rem;
+  color: #5d5d5d;
+  margin: 0;
+}
+.promoted {
+  position: absolute;
+  top: 0;
+
+  padding: 3px 5px;
+  margin-left: 20px;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  background-color: rgba(44, 44, 45, 0.644);
+}
+.offer {
+  position: absolute;
+  bottom: 0;
+  background-color: #266fef;
+  color: #fff;
+  padding: 1px 6px;
+}
+.delivery-time {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #000;
+  font-size: 1rem;
+  background-color: #fff;
+  margin-right: 15px;
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+}
+.max-safety {
+  display: flex;
+  padding: 10px 5px;
+}
+
+.container {
+  height: fit-content;
+  background-color: #3c9e89;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0;
+  font-size: 12px;
+  position: relative;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.safety {
+  background-color: #f6af77;
+  width: 90%;
+  padding: 2px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin: 3px auto 0 auto;
+}
+.delivery {
+  color: white;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  padding: 0 4px;
+}
+.about-safety {
+  color: #717070;
+  font-size: 1rem;
+}

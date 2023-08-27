@@ -1,0 +1,19 @@
+.main {
+  background-color: antiquewhite;
+}
+.search {
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+}
+.all-restaurats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  margin: auto;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
