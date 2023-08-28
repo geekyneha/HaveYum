@@ -1,7 +1,7 @@
 .navbar {
   display: flex;
   justify-content: center;
-  background-color: #f88f01;
+  background-color: #4D3C77;
 }
 .nav-container {
   width: 85vw;
@@ -14,7 +14,7 @@
 }
 .nav-items-container {
   display: flex;
-  gap: 2rem;
+  gap :2rem;
 }
 .nav-item {
   list-style-type: none;
