@@ -1,8 +1,9 @@
 .navbar {
   display: flex;
   justify-content: center;
-  background-color: #4D3C77;
+  background-color: #f88f01;
 }
+
 .nav-container {
   width: 85vw;
   display: flex;
@@ -12,13 +13,16 @@
   color: #fff;
   font-size: 1.2rem;
 }
+
 .nav-items-container {
   display: flex;
-  gap :2rem;
+  gap: 2rem;
 }
+
 .nav-item {
   list-style-type: none;
 }
+
 @media screen and (max-width: 480px) {
   .nav-items-container {
     display: none;
