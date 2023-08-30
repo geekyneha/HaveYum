@@ -4,6 +4,7 @@ import ResCard from "../Restaurant/ResCard";
 import Search from "../Search/Search";
 import { RES_API_URL } from "../../utils/constants";
 import ResCardShimmer from "../Restaurant/ResCardShimmer";
+import FilterButton from "../Button/FilterButton";
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -26,20 +27,23 @@ const Body = () => {
     <main className={style["main"]}>
       <div className={style["search"]}>
         <div>
-          <button className={style["Top-rated-btn"]}>Ratings 4.0+</button>
-          <span>fliter </span>
-          <span>fliter </span>
+          <FilterButton name={"Ratings 4.0+"} />
+          <FilterButton name={"Fast Delivery"} />
+          <FilterButton name={"Cost: Low to High"} />
+          <FilterButton name={"Pure Veg"} />
+          <FilterButton name={"offers"} />
         </div>
         <Search />
       </div>
 
       <div className={style["all-restaurats"]}>
-        {listOfRestaurant.length===0 ?
-        Array(20).fill().map((_,index)=><ResCardShimmer key={index} />)
-        :
-        listOfRestaurant.map((res) => (
-          <ResCard resData={res.data} key={res.data.id} />
-        ))}
+        {listOfRestaurant.length === 0
+          ? Array(20)
+              .fill()
+              .map((_, index) => <ResCardShimmer key={index} />)
+          : listOfRestaurant.map((res) => (
+              <ResCard resData={res.data} key={res.data.id} />
+            ))}
       </div>
     </main>
   );

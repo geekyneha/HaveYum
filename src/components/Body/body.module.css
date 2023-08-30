@@ -2,6 +2,7 @@
   height: 100px;
   display: flex;
   justify-content: space-around;
+
   align-items: center;
   color: #fff;
 }
@@ -13,4 +14,10 @@
   margin: auto;
   flex-wrap: wrap;
   gap: 3rem;
+}
+
+@media screen and (max-width: 830px) {
+  .search {
+    flex-direction: column;
+  }
 }
