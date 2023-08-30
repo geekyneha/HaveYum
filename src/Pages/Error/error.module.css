@@ -1,0 +1,19 @@
+.error-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  color: white;
+  background-color: #f88f01;
+  margin: 0 0.3rem;
+  border-radius: 10px;
+  border: 1px solid #f88f01;
+}
+.btn:hover {
+  cursor: pointer;
+}
