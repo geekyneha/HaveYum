@@ -11,6 +11,7 @@ const ResCard = ({ resData }) => {
     costForTwo,
     cloudinaryImageId,
     promoted,
+    aggregatedDiscountInfo,
   } = resData;
 
   return (
@@ -23,7 +24,12 @@ const ResCard = ({ resData }) => {
           width={295}
         />
         {promoted ? <p className={style.promoted}>Promoted</p> : ""}
-        <p className={style.offer}>50 % OFF up to 100</p>
+        {aggregatedDiscountInfo ? (
+          <p className={style.offer}>{aggregatedDiscountInfo.header}</p>
+        ) : (
+          ""
+        )}
+
         <p className={style["delivery-time"]}>{deliveryTime} min</p>
       </div>
       <div className={style.content}>
