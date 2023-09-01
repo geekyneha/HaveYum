@@ -1,14 +1,19 @@
 .navbar {
   display: flex;
   justify-content: center;
-  background-color: #f88f01;
+  align-items: center;
+  background-color: #e12830;
+}
+.logo {
+  border-radius: 50px;
 }
 
 .nav-container {
   width: 85vw;
   display: flex;
   justify-content: space-between;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
+  align-items: center;
 
   color: #fff;
   font-size: 1.2rem;
