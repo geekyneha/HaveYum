@@ -1,8 +1,11 @@
 .filter-Button {
   padding: 0.5rem 0.7rem;
   background-color: white;
-  color: #f88f01;
+  color: #e12830;
   margin: 0 0.3rem;
   border-radius: 24px;
-  border: 1px solid #f88f01;
+  border: 1px solid #e12830;
+}
+.filter-Button:hover {
+  cursor: pointer;
 }
