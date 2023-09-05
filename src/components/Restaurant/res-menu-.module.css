@@ -1,0 +1,21 @@
+.menu-page{
+
+    display: flex;
+    justify-content: center;
+
+}
+.menu-container{
+    width: 40vw;
+    border: 1px solid lightgray;
+    height: 100vw;
+
+}
+.about-restaurant{
+    display: flex;
+    justify-content: space-between;
+ 
+}
+.price-del{
+    display: flex;
+    gap: 2rem;
+}

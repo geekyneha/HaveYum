@@ -6,9 +6,11 @@ import { RES_API_URL } from "../../utils/constants";
 import ResCardShimmer from "../Restaurant/ResCardShimmer";
 import FilterButton from "../Button/FilterButton";
 
+
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+ 
   useEffect(() => {
     fetchData();
   }, []);
@@ -42,7 +44,7 @@ const Body = () => {
               .fill()
               .map((_, index) => <ResCardShimmer key={index} />)
           : listOfRestaurant.map((res) => (
-              <ResCard resData={res.data} key={res.data.id} />
+              <ResCard resData={res.data} key={res.data.id}  />
             ))}
       </div>
     </main>
