@@ -1,91 +1,91 @@
 import React, { useEffect, useState } from "react";
-import style from './res-menu-.module.css'
-import { RES_MENU_API } from '../../utils/constants.js'
-import { useParams } from "react-router-dom"; 
-
+import style from "./res-menu-.module.css";
+import { RES_MENU_API } from "../../utils/constants.js";
+import { useParams } from "react-router-dom";
 
 const ResMenu = () => {
+  const [resInfo, setResInfo] = useState(null);
+  const { resId } = useParams();
 
-  const [resInfo,setResInfo ]= useState(null);
-  const {resId} = useParams(); 
-
-  useEffect(()=>{
+  useEffect(() => {
     fetchData();
-  },[])
+  }, []);
 
-  const fetchData = async () =>{
-
-    const response = await fetch (RES_MENU_API+resId);
-    console.log(RES_MENU_API+resId)
-    const data = await  response.json();
-console.log(data.data.cards[0].card.card.info)
-  //   console.log(data[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card);
-  //   console.log(data[0]?.card?.card?.info)
+  const fetchData = async () => {
+    const response = await fetch(RES_MENU_API + resId);
+    console.log(RES_MENU_API + resId);
+    const data = await response.json();
+    console.log(data.data.cards[0].card.card.info);
+    //   console.log(data[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card);
+    //   console.log(data[0]?.card?.card?.info)
     setResInfo(data.data);
 
+    // }
+    // const { lastMileTravelString, deliveryTime, costForTwoMessage } =
+    //   data[0]?.card?.card?.info?.sla;
+    // const { itemCards} = data[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+  };
+  if (resInfo == null) return <div>Loading...</div>;
 
-  // }
-  // const { lastMileTravelString, deliveryTime, costForTwoMessage } =
-  //   data[0]?.card?.card?.info?.sla;
-  // const { itemCards} = data[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+  const { name, cuisines, areaName, avgRating, costForTwoMessage } =
+    resInfo?.cards[0]?.card?.card?.info;
 
-
-
-
-}
-if (resInfo==null)  return <div>Loading...</div>;
-  
-  const { name, cuisines, areaName,avgRating,costForTwoMessage
-
-  } =resInfo?.cards[0]?.card?.card?.info;
-
-  
-  return(
-
-    
-
+  return (
     <div className={style["menu-page"]}>
-
       <div className={style["menu-container"]}>
-
         <div className={style["about-restaurant"]}>
-
           <div>
             <h3>{name}</h3>
-            <h4>{cuisines}</h4>
+            <p className={style["small"]}>{cuisines}</p>
+            <p className={style["small"]}>city,mile</p>
+
+            <div className={style["small"]}>
+              <span>kilometer</span> <span>discounted </span>
+            </div>
           </div>
 
           <div>
-            <div>{avgRating
-}</div>
+            <div>{avgRating}</div>
           </div>
-
-         
-
-          
-
         </div>
+        <div className={style["hr"]}></div>
         <div className={style["price-del"]}>
-            <h5>19 mins</h5> 
-            <h5>{costForTwoMessage}</h5>
+          <h5>19 mins</h5>
+          <h5>{costForTwoMessage}</h5>
+        </div>
+        <div className={style["offers-container"]}>
+          <div className={style["offers"]}>
+            <h5>Offer</h5>
+            <p>Use code SUPERSAVER</p>
           </div>
-        <div className={style["menu"]} >
-           
-
+          <div className={style["offers"]}>
+            <h5>Offer</h5>
+            <p>Use code SUPERSAVER</p>
+          </div>
+          <div className={style["offers"]}>
+            <h5>Offer</h5>
+            <p className={style["offers-text"]}>Use code SUPERSAVER</p>
+          </div>
+          <div className={style["offers"]}>
+            <h5>Offer</h5>
+            <p>Use code SUPERSAVER</p>
+          </div>
+          <div className={style["offers"]}>
+            <h5>Offer</h5>
+            <p>Use code SUPERSAVER</p>
+          </div>
+          <div className={style["offers"]}>
+            <h5>Offer</h5>
+            <p>Use code SUPERSAVER</p>
+          </div>
         </div>
+        <div></div>
+        <div className={style["menu"]}></div>
 
-        <div className={style["license"]}>
-
-        </div>
-
-
-
+        <div className={style["license"]}></div>
       </div>
-
-
     </div>
-    
-    );
+  );
 };
 
 export default ResMenu;

@@ -1,21 +1,53 @@
-.menu-page{
-
-    display: flex;
-    justify-content: center;
-
+.menu-page {
+  display: flex;
+  justify-content: center;
 }
-.menu-container{
-    width: 40vw;
-    border: 1px solid lightgray;
-    height: 100vw;
+.menu-container {
+  width: 40vw;
+  border: 1px solid lightgray;
+  height: 100vw;
+  padding: 1rem;
+}
+.about-restaurant {
+  display: flex;
+  justify-content: space-between;
+}
+.cuisines {
+  margin: 0;
+  font-size: small;
+}
+.small {
+  margin: 0.5rem 0;
+  font-size: small;
+}
+.price-del {
+  display: flex;
+  gap: 2rem;
+}
+.hr {
+  width: 100%;
+  border-bottom: 1px dashed gray;
+}
+.offers-container {
+  display: flex;
+  gap: 2rem;
 
+  overflow-x: scroll;
 }
-.about-restaurant{
-    display: flex;
-    justify-content: space-between;
- 
+.offers-container::-webkit-scrollbar {
+  display: none;
 }
-.price-del{
-    display: flex;
-    gap: 2rem;
+.offers {
+  padding: 0.5rem 1rem;
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+  margin: 1rem;
+}
+.offers > h5,
+.offers > p {
+  margin: 0.2rem;
+  width: 200px;
+}
+.offers-text {
+  width: max-content;
 }
