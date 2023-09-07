@@ -17,16 +17,23 @@
   font-size: small;
 }
 .small {
-  margin: 0.5rem 0;
   font-size: small;
+}
+.rating {
+  padding: 0.3rem 1rem;
+  background-color: rgb(31, 177, 31);
+  border: none;
+  color: white;
+  border-radius: 5px;
 }
 .price-del {
   display: flex;
   gap: 2rem;
 }
 .hr {
+  margin-top: 2rem;
   width: 100%;
-  border-bottom: 1px dashed gray;
+  border-bottom: 1px dashed lightgray;
 }
 .offers-container {
   display: flex;
@@ -50,4 +57,40 @@
 }
 .offers-text {
   width: max-content;
+}
+.icon {
+  margin-top: 1rem;
+}
+.rating-icon {
+  margin-right: 0.3rem;
+}
+.mile-icon {
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+.delivery-time {
+  display: flex;
+  gap: 0.5rem;
+}
+.dish-container {
+  display: flex;
+  justify-content: space-between;
+}
+.dish {
+  margin: 0;
+}
+.price {
+  margin: 0.5rem;
+}
+.detail {
+  color: gray;
+}
+.non-veg {
+  border: 1px solid red;
+  width: fit-content;
+}
+.veg {
+  border: 1px solid green;
+  padding: 0.1rem 0.1rem 0;
+  width: fit-content;
 }
