@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e12830;
+  color: #e12830;
+  box-shadow: 0px 20px 20px -20px rgba(0, 0, 0, 0.35);
 }
 .logo {
   border-radius: 50px;
@@ -15,7 +16,6 @@
   padding: 1rem 0;
   align-items: center;
 
-  color: #fff;
   font-size: 1.2rem;
 }
 
@@ -27,8 +27,12 @@
 .nav-item {
   list-style-type: none;
 }
-.nav-item:hover{
+.nav-item:hover {
   cursor: pointer;
+}
+.link {
+  text-decoration: none;
+  color: #e12830;
 }
 
 @media screen and (max-width: 480px) {

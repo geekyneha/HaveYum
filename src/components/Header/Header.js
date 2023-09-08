@@ -5,25 +5,31 @@ import { BiDish } from "react-icons/bi";
 import { MdPerson2 } from "react-icons/md";
 import { AiOutlineHome } from "react-icons/ai";
 import { TbListDetails } from "react-icons/tb";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <nav className={style["navbar"]}>
       <div className={style["nav-container"]}>
-        <div>
-          <img
-            src="https://media.istockphoto.com/id/1197904085/vector/pink-h-smile-vector-template.jpg?s=612x612&w=0&k=20&c=6SpIFvz2oaR0UeZVD_47c_KaotSSHuOROoUD9owqvpU="
-            alt="Have
+        <Link to="/" className={style["link"]}>
+          <div>
+            <img
+              src="https://media.istockphoto.com/id/1197904085/vector/pink-h-smile-vector-template.jpg?s=612x612&w=0&k=20&c=6SpIFvz2oaR0UeZVD_47c_KaotSSHuOROoUD9owqvpU="
+              alt="Have
         yum"
-            width={40}
-            height={40}
-            className={style["logo"]}
-          />
-        </div>
+              width={40}
+              height={40}
+              className={style["logo"]}
+            />
+          </div>
+        </Link>
         <div className={style["nav-items-container"]}>
-          <li className={style["nav-item"]}>
-            Home <AiOutlineHome />{" "}
-          </li>
+          <Link to="/" className={style["link"]}>
+            {" "}
+            <li className={style["nav-item"]}>
+              Home <AiOutlineHome />
+            </li>
+          </Link>
           <li className={style["nav-item"]}>
             About <TbListDetails />
           </li>
