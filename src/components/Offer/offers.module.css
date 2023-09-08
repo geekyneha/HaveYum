@@ -1,0 +1,31 @@
+/* offers main container */
+.offers-container {
+  width: 75vw;
+  margin: 3rem auto;
+}
+
+/* heading and arrow icons  */
+.heading {
+    display: flex;
+    justify-content: space-between;
+  }
+  .arrow-container {
+    display: flex;
+    gap: 1rem;
+  }
+  .left-icon:hover,
+  .right-icon:hover {
+    cursor: pointer;
+    color: gray;
+  }
+  
+/* offers inner container */
+.offers {
+  display: flex;
+  gap: 2rem;
+  overflow-x: scroll;
+}
+
+.offers::-webkit-scrollbar {
+  display: none;
+}
