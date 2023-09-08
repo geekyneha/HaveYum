@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
 import style from "./res-menu-.module.css";
-import { RES_MENU_API } from "../../utils/constants.js";
 import { useParams } from "react-router-dom";
 import { MdAccessTimeFilled } from "react-icons/md";
 import { MdOutlineDirectionsBike } from "react-icons/md";
@@ -12,35 +10,26 @@ import { GoTriangleUp } from "react-icons/go";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { CDN_URL } from "../../utils/constants.js";
+import { FSSAI_IMG } from "../../utils/constants.js";
+import useRestaurantMenu from "../../hooks/useRestaurantMenu";
 
 const ResMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
   const { resId } = useParams();
+  const resInfo = useRestaurantMenu(resId);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    const response = await fetch(RES_MENU_API + resId);
-    console.log(RES_MENU_API + resId);
-    const data = await response.json();
-    console.log(data.data.cards[0].card.card.info);
-    //   console.log(data[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card);
-    //   console.log(data[0]?.card?.card?.info)
-    setResInfo(data.data);
-
-    // }
-    // const { lastMileTravelString, deliveryTime, costForTwoMessage } =
-    //   data[0]?.card?.card?.info?.sla;
-    // const { itemCards} = data[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-  };
   if (resInfo == null) return <div>Loading...</div>;
-
-  const { name, cuisines, areaName, avgRating, costForTwoMessage } =
+  console.log(resInfo);
+  const { name, cuisines, areaName, avgRating, costForTwoMessage, city } =
     resInfo?.cards[0]?.card?.card?.info;
+  const { deliveryTime, lastMileTravelString, slaString } =
+    resInfo?.cards[0]?.card?.card?.info?.sla;
+
+  const { offers } = resInfo?.cards[1]?.card?.card?.gridElements?.infoWithStyle;
+  const { cards } =
+    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR ||
+    resInfo?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR;
 
   return (
     <div className={style["menu-page"]}>
@@ -48,18 +37,17 @@ const ResMenu = () => {
         <div className={style["about-restaurant"]}>
           <div>
             <h3>{name}</h3>
-            <p className={style["small"]}>{cuisines}</p>
-            <p className={style["small"]}>city,mile</p>
+            <p className={style["small"]}>{cuisines.join(", ")}</p>
+            <p className={style["small"]}>{areaName}</p>
 
-            <div className={style["small"]}>
+            <div className={style["distance"]}>
               <span>
                 <MdOutlineDirectionsBike
                   className={style["mile-icon"]}
-                  size={23}
+                  size={20}
                 />
-                kilometer
-              </span>{" "}
-              <span>discounted </span>
+              </span>
+              <span>{lastMileTravelString}</span>
             </div>
           </div>
 
@@ -74,81 +62,118 @@ const ResMenu = () => {
         <div className={style["price-del"]}>
           <div className={style["delivery-time"]}>
             <MdAccessTimeFilled size={25} className={style["icon"]} />
-            <h4>19 mins</h4>
+            <h4>{slaString}</h4>
           </div>
           <div className={style["delivery-time"]}>
-            <HiOutlineCurrencyRupee size={25} className={style["icon"]} />{" "}
+            <HiOutlineCurrencyRupee size={25} className={style["icon"]} />
             <h4>{costForTwoMessage}</h4>
           </div>
         </div>
         <div className={style["offers-container"]}>
-          <div className={style["offers"]}>
-            <h5>
-              <BiSolidOffer size={23} />
-              Offer
-            </h5>
-            <p>Use code SUPERSAVER</p>
-          </div>
-          <div className={style["offers"]}>
-            <h5>Offer</h5>
-            <p>Use code SUPERSAVER</p>
-          </div>
-          <div className={style["offers"]}>
-            <h5>Offer</h5>
-            <p className={style["offers-text"]}>Use code SUPERSAVER</p>
-          </div>
-          <div className={style["offers"]}>
-            <h5>Offer</h5>
-            <p>Use code SUPERSAVER</p>
-          </div>
-          <div className={style["offers"]}>
-            <h5>Offer</h5>
-            <p>Use code SUPERSAVER</p>
-          </div>
-          <div className={style["offers"]}>
-            <h5>Offer</h5>
-            <p>Use code SUPERSAVER</p>
-          </div>
+          {offers.map((offer, index) => (
+            <div key={index} className={style["offers"]}>
+              <div>
+                <BiSolidOffer size={23} fill="#865A4F" />
+                <span className={style["header"]}>{offer?.info?.header}</span>
+              </div>
+              <p className={style["coupon"]}>
+                {offer?.info?.couponCode} | {offer?.info?.description}
+              </p>
+            </div>
+          ))}
         </div>
         <div></div>
         <div className={style["menu"]}>
-          <div>
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography>Recommonded</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <div className={style["dish-container"]}>
-                  <div>
-                    <div className={style["non-veg"]}>
-                      <GoTriangleUp fill="red" />
-                    </div>
-                    <div className={style["veg"]}>
-                      <BsCircleFill fill="green" />
-                    </div>
-                    <h4 className={style["dish"]}>Dish Name</h4>
-                    <h5 className={style["price"]}>Rs 90</h5>
-                    <p className={style["detail"]}>Detailes in diveckfekkk</p>
-                  </div>
+          {cards.slice(1, cards.length - 2).map((card, index) => (
+            <div key={index} className={style["accordion"]}>
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <h4 className={style["category"]}>{card.card.card.title}</h4>
+                </AccordionSummary>
+                <AccordionDetails>
+                  {card.card.card.itemCards
+                    ? card.card.card.itemCards.map((item, index) => (
+                        <div className={style["dish-container"]} key={index}>
+                          <div>
+                            {item.card.info.isVeg === 1 ? (
+                              <div className={style["veg"]}>
+                                <BsCircleFill fill="green" size={10} />
+                              </div>
+                            ) : (
+                              <div className={style["non-veg"]}>
+                                <GoTriangleUp fill="red" />
+                              </div>
+                            )}
+                            <h4 className={style["dish"]}>
+                              {item.card.info.name}
+                            </h4>
+                            <h5 className={style["price"]}>
+                              ₹
+                              {item.card.info.defaultPrice / 100 ||
+                                item.card.info.price / 100}
+                            </h5>
+                            <p className={style["detail"]}>
+                              {item.card.info.description}
+                            </p>
+                          </div>
 
-                  <div>
-                    <img
-                      src="https://images.unsplash.com/photo-1602253057119-44d745d9b860?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGlzaHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
-                      alt="dish"
-                      width={150}
-                    />
-                  </div>
-                </div>
-              </AccordionDetails>
-            </Accordion>
-          </div>
+                          <div>
+                            {item.card.info.imageId ? (
+                              <img
+                                src={CDN_URL + item.card.info.imageId}
+                                alt="dish"
+                                className={style["dish-image"]}
+                                width={110}
+                              />
+                            ) : (
+                              ""
+                            )}
+                            <div className={style["button-container"]}>
+                              {" "}
+                              <button
+                                className={
+                                  item.card.info.imageId
+                                    ? style["add-button"]
+                                    : style["add-btn"]
+                                }
+                              >
+                                ADD
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      ))
+                    : ""}
+                </AccordionDetails>
+              </Accordion>
+            </div>
+          ))}
         </div>
 
-        <div className={style["license"]}></div>
+        <div className={style["license-footer"]}>
+          <div className={style["license"]}>
+            <div>
+              <img
+                src={FSSAI_IMG}
+                alt="fssai"
+                width={50}
+              />
+            </div>
+            <p>liceness no</p>
+          </div>
+          <div className={style["hotel-detail"]}>
+            <h3>{name}</h3>
+            <h5>outlet: {areaName}</h5>
+
+            <p>
+              {name}, {areaName} , {city}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
