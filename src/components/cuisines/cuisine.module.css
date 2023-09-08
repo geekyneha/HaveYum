@@ -1,0 +1,35 @@
+/* Cuisines container */
+.cuisine-container {
+  width: 75vw;
+  background-color: white;
+  margin: 3rem auto;
+}
+
+/* Heading and arrows */
+.heading {
+    display: flex;
+    justify-content: space-between;
+  }
+  .arrow-container {
+    display: flex;
+    gap: 1rem;
+  }
+  .left-icon:hover,
+  .right-icon:hover {
+    cursor: pointer;
+    color: gray;
+  }
+
+  /* All cuisines */
+.cuisine {
+  display: flex;
+  overflow-x: scroll;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.cuisine::-webkit-scrollbar {
+  display: none;
+}
+
+
