@@ -1,11 +1,12 @@
+/* search container */
 .search {
   height: 100px;
   display: flex;
   justify-content: space-around;
-
   align-items: center;
   color: #fff;
 }
+/* All Restaurants */
 .all-restaurats {
   display: flex;
   justify-content: center;
@@ -16,6 +17,7 @@
   gap: 3rem;
 }
 
+/* Media Query for Medium and small Devices */
 @media screen and (max-width: 830px) {
   .search {
     flex-direction: column;
