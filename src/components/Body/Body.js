@@ -1,37 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import style from "./body.module.css";
 import ResCard from "../Restaurant/ResCard";
-import Search from "../Search/Search";
-import { RES_API_URL } from "../../utils/constants";
+import Search from "../Search/Search";;
 import ResCardShimmer from "../Restaurant/ResCardShimmer";
 import FilterButton from "../Button/FilterButton";
 import Cuisine from "../cuisines/Cuisine";
 import Offers from "../Offer/Offers";
+import useOnlineStatus from "../../hooks/useOnlineStatus";
+import Offline from "../../Pages/Offline/Offline";
+import useRestaurants from "../../hooks/useRestaurants";
 
 const Body = () => {
-  const [listOfRestaurant, setListOfRestaurant] = useState([]);
+  const listOfRestaurant = useRestaurants();
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+  const OnlineStatus = useOnlineStatus();
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    const response = await fetch(RES_API_URL);
-    const data = await response.json();
-    console.log(data);
-    setListOfRestaurant(data);
-  };
-  // if (listOfRestaurant.length === 0) {
-  //   return <ResCardShimmer />;
-  // }
-
+  if (OnlineStatus === "false") return <Offline />;
   return (
     <main className={style["main"]}>
       <Offers />
       <Cuisine />
       <div className={style["search"]}>
-        <div>
+        <div className={style["button-container"]}>
           <FilterButton name={"Ratings 4.0+"} />
           <FilterButton name={"Fast Delivery"} />
           <FilterButton name={"Cost: Low to High"} />
