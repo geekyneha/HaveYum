@@ -182,10 +182,14 @@
   align-items: center;
 }
 
+.menu {
+  min-height: fit-content;
+}
+
 /* media Query for small device */
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 540px) {
   .menu-container {
-    width: 90vw;
+    width: 80vw;
   }
 }
