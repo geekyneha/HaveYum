@@ -42,7 +42,7 @@ nav links  */
 /* Media Query for small Devices */
 
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 786px) {
   .nav-items-container {
     position: fixed;
     bottom: 0;
