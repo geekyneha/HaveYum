@@ -3,7 +3,6 @@ import style from "./res-card.module.css";
 import { CDN_URL } from "../../utils/constants";
 import { useNavigate } from "react-router-dom";
 
-
 const ResCard = ({ resData }) => {
   const {
     name,
@@ -14,17 +13,16 @@ const ResCard = ({ resData }) => {
     cloudinaryImageId,
     promoted,
     aggregatedDiscountInfo,
-    id
+    id,
   } = resData;
-  const navigate = useNavigate()
-  const showMenu=(id)=>{
-    console.log("clicked")
-      navigate("restaurant/"+id)
- 
-     }
+  const navigate = useNavigate();
+  const showMenu = (id) => {
+    console.log("clicked");
+    navigate("restaurant/" + id);
+  };
   return (
     <div className={style.card}>
-      <div className={style["image-container"]} onClick={()=>showMenu(id)}>
+      <div className={style["image-container"]} onClick={() => showMenu(id)}>
         <img
           src={CDN_URL + cloudinaryImageId}
           alt="food"
