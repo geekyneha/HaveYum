@@ -7,20 +7,20 @@
 
 /* Heading and arrows */
 .heading {
-    display: flex;
-    justify-content: space-between;
-  }
-  .arrow-container {
-    display: flex;
-    gap: 1rem;
-  }
-  .left-icon:hover,
-  .right-icon:hover {
-    cursor: pointer;
-    color: gray;
-  }
+  display: flex;
+  justify-content: space-between;
+}
+.arrow-container {
+  display: flex;
+  gap: 1rem;
+}
+.left-icon:hover,
+.right-icon:hover {
+  cursor: pointer;
+  color: gray;
+}
 
-  /* All cuisines */
+/* All cuisines */
 .cuisine {
   display: flex;
   overflow-x: scroll;
@@ -32,4 +32,9 @@
   display: none;
 }
 
-
+/* Media Query for small device */
+@media screen and (max-width: 480px) {
+  .cuisine-img {
+    width: 100px;
+  }
+}
