@@ -31,7 +31,7 @@
 }
 
 /* media query for small device */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .offer-img {
     width: 200px;
   }
