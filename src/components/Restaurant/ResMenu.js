@@ -157,11 +157,7 @@ const ResMenu = () => {
         <div className={style["license-footer"]}>
           <div className={style["license"]}>
             <div>
-              <img
-                src={FSSAI_IMG}
-                alt="fssai"
-                width={50}
-              />
+              <img src={FSSAI_IMG} alt="fssai" width={50} />
             </div>
             <p>liceness no</p>
           </div>
