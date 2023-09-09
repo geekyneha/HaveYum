@@ -6,3 +6,9 @@ export const RES_MENU_API =
 
 export const FSSAI_IMG =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_120,h_60/fssai_final_edss9i";
+
+export const APP_LOGO =
+  "https://media.istockphoto.com/id/1197904085/vector/pink-h-smile-vector-template.jpg?s=612x612&w=0&k=20&c=6SpIFvz2oaR0UeZVD_47c_KaotSSHuOROoUD9owqvpU=";
+
+export const ERROR_GIF =
+  "https://cdn.svgator.com/images/2022/01/404-page-animation-example.gif";
