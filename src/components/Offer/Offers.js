@@ -43,7 +43,12 @@ const Offers = () => {
       <div className={style["offers"]} ref={offersContainer}>
         {offers.map((offer) => (
           <div className={offer.imgId}>
-            <img src={offer.imgUrl} alt="offers" width={400} />
+            <img
+              src={offer.imgUrl}
+              alt="offers"
+              width={400}
+              className={style["offer-img"]}
+            />
           </div>
         ))}
       </div>

@@ -6,19 +6,19 @@
 
 /* heading and arrow icons  */
 .heading {
-    display: flex;
-    justify-content: space-between;
-  }
-  .arrow-container {
-    display: flex;
-    gap: 1rem;
-  }
-  .left-icon:hover,
-  .right-icon:hover {
-    cursor: pointer;
-    color: gray;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+}
+.arrow-container {
+  display: flex;
+  gap: 1rem;
+}
+.left-icon:hover,
+.right-icon:hover {
+  cursor: pointer;
+  color: gray;
+}
+
 /* offers inner container */
 .offers {
   display: flex;
@@ -28,4 +28,11 @@
 
 .offers::-webkit-scrollbar {
   display: none;
+}
+
+/* media query for small device */
+@media screen and (max-width: 480px) {
+  .offer-img {
+    width: 200px;
+  }
 }
