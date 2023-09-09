@@ -23,3 +23,10 @@
   right: 4px;
   top: 2px;
 }
+
+@media screen and (max-width: 480px) {
+  .search {
+    width: 80vw;
+    margin-bottom: 2rem;
+  }
+}
