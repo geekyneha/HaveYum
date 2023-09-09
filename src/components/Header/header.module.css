@@ -41,12 +41,8 @@ nav links  */
 
 /* Media Query for small Devices */
 
-@media screen and (max-width: 550px) {
-  .d-none {
-    display: none;
-  }
-}
-@media screen and (max-width: 480px) {
+
+@media screen and (max-width: 540px) {
   .nav-items-container {
     position: fixed;
     bottom: 0;
