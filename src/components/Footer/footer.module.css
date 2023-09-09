@@ -1,0 +1,37 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  background-color: #f0f0f0;
+}
+
+.footer-container {
+  width: 90vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 3rem 1rem;
+}
+
+.company-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.company {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-family: cursive;
+  font-size: 1.2rem;
+}
+.logo {
+  width: 50px;
+  border-radius: 50%;
+}
+.item {
+  list-style: none;
+  line-height: 2;
+}
