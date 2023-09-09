@@ -6,6 +6,7 @@ import { MdPerson2 } from "react-icons/md";
 import { AiOutlineHome } from "react-icons/ai";
 import { TbListDetails } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import { APP_LOGO } from "../../utils/constants";
 
 const Header = () => {
   return (
@@ -14,7 +15,7 @@ const Header = () => {
         <Link to="/" className={style["link"]}>
           <div>
             <img
-              src="https://media.istockphoto.com/id/1197904085/vector/pink-h-smile-vector-template.jpg?s=612x612&w=0&k=20&c=6SpIFvz2oaR0UeZVD_47c_KaotSSHuOROoUD9owqvpU="
+              src={APP_LOGO}
               alt="Have
         yum"
               width={40}
@@ -25,23 +26,23 @@ const Header = () => {
         </Link>
         <div className={style["nav-items-container"]}>
           <Link to="/" className={style["link"]}>
-            {" "}
+            
             <li className={style["nav-item"]}>
-              Home <AiOutlineHome />
+              <span className={style["d-none"]}> Home</span> <AiOutlineHome className={style["icon"]} />
             </li>
           </Link>
           <li className={style["nav-item"]}>
-            About <TbListDetails />
+           <span className={style["d-none"]}> About</span> <TbListDetails />
           </li>
           <li className={style["nav-item"]}>
-            dish Craft <BiDish />
+           <span className={style["d-none"]}> dish Craft</span> <BiDish />
           </li>
 
           <li className={style["nav-item"]}>
-            Cart <FiShoppingBag />{" "}
+            <span className={style["d-none"]}>Cart</span> <FiShoppingBag />
           </li>
           <li className={style["nav-item"]}>
-            Sign up <MdPerson2 />
+            <span className={style["d-none"]}>Sign up</span> <MdPerson2 />
           </li>
         </div>
       </div>
