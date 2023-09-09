@@ -1,11 +1,13 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import AppLayout from "./App/AppLayout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./Pages/About/About";
 import Body from "./components/Body/Body.js";
 import Error from "./Pages/Error/Error";
-import ResMenu from "./components/Restaurant/ResMenu";
 
+// import ResMenu from "./components/Restaurant/ResMenu";
+
+const ResMenu = lazy(() => import("./components/Restaurant/ResMenu"));
 
 const App = () => {
   const router = createBrowserRouter([
@@ -23,7 +25,11 @@ const App = () => {
         },
         {
           path: "/restaurant/:resId",
-          element: <ResMenu />,
+          element: (
+            <Suspense fallback={<h3>Loading</h3>}>
+              <ResMenu />
+            </Suspense>
+          ),
         },
       ],
       errorElement: <Error />,
