@@ -30,6 +30,9 @@
   display: none;
 }
 
+.offer-img {
+  width: 400px;
+}
 /* media query for small device */
 @media screen and (max-width: 768px) {
   .offer-img {

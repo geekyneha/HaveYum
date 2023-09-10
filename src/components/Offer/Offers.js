@@ -46,7 +46,6 @@ const Offers = () => {
             <img
               src={offer.imgUrl}
               alt="offers"
-              width={300}
               className={style["offer-img"]}
             />
           </div>
