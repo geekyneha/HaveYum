@@ -1,5 +1,5 @@
 import React from "react";
-import * as style from "./res-card.module.css";
+import style from "./res-card.module.css";
 import { CDN_URL } from "../../utils/constants";
 import { useNavigate } from "react-router-dom";
 
