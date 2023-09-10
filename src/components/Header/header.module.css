@@ -10,6 +10,8 @@
 
 .logo {
   border-radius: 50px;
+  position: relative;
+  left: 1rem;
 }
 
 /* nav container */
@@ -39,7 +41,7 @@
 }
 
 /* Media Query for larger screens */
-@media screen and (min-width: 301px) {
+@media screen and (min-width: 100px) {
   /* Revert to your original styles for larger screens here */
   .nav-container {
     position: relative;
