@@ -17,7 +17,7 @@ const Body = () => {
 
   if (OnlineStatus === "false") return <Offline />;
   return (
-    <main className={style["main"]}>
+    <main >
       <Offers />
       <Cuisine />
       <div className={style["search"]}>
