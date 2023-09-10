@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { offers } from "../../utils/mock";
-import style from "./offers.module.css";
+import * as style from "./offers.module.css";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 

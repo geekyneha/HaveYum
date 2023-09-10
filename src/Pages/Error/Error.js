@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./error.module.css";
+import * as style from "./error.module.css";
 import { Link } from "react-router-dom";
 import { ERROR_GIF } from "../../utils/constants";
 

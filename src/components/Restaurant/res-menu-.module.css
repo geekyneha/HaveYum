@@ -188,8 +188,8 @@
 
 /* media Query for small device */
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 786px) {
   .menu-container {
-    width: 80vw;
+    width: 90vw;
   }
 }

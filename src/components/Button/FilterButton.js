@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./filter-button.module.css";
+import * as style from "./filter-button.module.css";
 
 const FilterButton = ({ name }) => {
   return <button className={style["filter-Button"]}>{name}</button>;

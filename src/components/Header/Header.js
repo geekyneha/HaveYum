@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./header.module.css";
+import * as style from "./header.module.css";
 import { FiShoppingBag } from "react-icons/fi";
 import { BiDish } from "react-icons/bi";
 import { MdPerson2 } from "react-icons/md";
@@ -15,7 +15,7 @@ const Header = () => {
         <Link to="/" className={style["link"]}>
           <div>
             <img
-              src={APP_LOGO}
+              src={APP}
               alt="Have
         yum"
               width={40}

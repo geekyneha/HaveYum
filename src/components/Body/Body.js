@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import style from "./body.module.css";
+import * as style from "./body.module.css";
 import ResCard from "../Restaurant/ResCard";
 import Search from "../Search/Search";;
 import ResCardShimmer from "../Restaurant/ResCardShimmer";

@@ -1,4 +1,4 @@
-import style from "./res-menu-.module.css";
+import * as style from "./res-menu-.module.css";
 import { useParams } from "react-router-dom";
 import { MdAccessTimeFilled } from "react-icons/md";
 import { MdOutlineDirectionsBike } from "react-icons/md";

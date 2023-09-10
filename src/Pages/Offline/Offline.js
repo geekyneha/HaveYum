@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./offline.module.css";
+import * as style from "./offline.module.css";
 
 const Offline = () => {
   return (

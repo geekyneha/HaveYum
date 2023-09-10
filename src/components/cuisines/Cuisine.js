@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { cuisines } from "../../utils/mock";
-import style from "./cuisine.module.css";
+import * as style from "./cuisine.module.css";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 

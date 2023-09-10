@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./res-card-shimmer.module.css";
+import * as style from "./res-card-shimmer.module.css";
 const ResCardShimmer = () => {
   return (
     <div className={style.card}>
