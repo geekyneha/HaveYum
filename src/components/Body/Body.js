@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as style from "./body.module.css";
 import ResCard from "../Restaurant/ResCard";
-import Search from "../Search/Search";;
+import Search from "../Search/Search";
 import ResCardShimmer from "../Restaurant/ResCardShimmer";
 import FilterButton from "../Button/FilterButton";
 import Cuisine from "../cuisines/Cuisine";
@@ -17,7 +17,7 @@ const Body = () => {
 
   if (OnlineStatus === "false") return <Offline />;
   return (
-    <main >
+    <main>
       <Offers />
       <Cuisine />
       <div className={style["search"]}>
