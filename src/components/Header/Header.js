@@ -26,16 +26,15 @@ const Header = () => {
         </Link>
         <div className={style["nav-items-container"]}>
           <Link to="/" className={style["link"]}>
-            
             <li className={style["nav-item"]}>
-              <span className={style["d-none"]}> Home</span> <AiOutlineHome  />
+              <span className={style["d-none"]}> Home</span> <AiOutlineHome />
             </li>
           </Link>
           <li className={style["nav-item"]}>
-           <span className={style["d-none"]}> About</span> <TbListDetails />
+            <span className={style["d-none"]}> About</span> <TbListDetails />
           </li>
           <li className={style["nav-item"]}>
-           <span className={style["d-none"]}> dish Craft</span> <BiDish />
+            <span className={style["d-none"]}> dish Craft</span> <BiDish />
           </li>
 
           <li className={style["nav-item"]}>
