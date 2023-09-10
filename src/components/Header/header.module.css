@@ -1,3 +1,4 @@
+/* Default styles for mobile devices */
 /* navbar container */
 .navbar {
   display: flex;
@@ -10,22 +11,20 @@
 .logo {
   border-radius: 50px;
 }
-/* 
-nav links  */
+
+/* nav container */
 .nav-container {
-  width: 85vw;
+  width: 100vw; /* Full width for mobile devices */
   display: flex;
   justify-content: space-between;
   padding: 1rem 0;
   align-items: center;
-
   font-size: 1.2rem;
 }
 
 /* nav items */
 .nav-items-container {
-  display: flex;
-  gap: 2rem;
+  display: none; /* Hide on mobile by default */
 }
 
 .nav-item {
@@ -39,12 +38,14 @@ nav links  */
   color: #e12830;
 }
 
-/* Media Query for small Devices */
-
-@media screen and (max-width: 1200px) {
+/* Media Query for larger screens */
+@media screen and (min-width: 301px) {
+  /* Revert to your original styles for larger screens here */
   .nav-container {
     position: relative;
+    width: 85vw;
   }
+
   .nav-items-container {
     position: fixed;
     bottom: 0;
@@ -57,20 +58,18 @@ nav links  */
     width: 100vw;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     padding: 1rem 0;
+    display: flex; /* Show on screens wider than 300px */
   }
+
   .logo {
     margin: 0 2rem;
   }
+
   .d-none {
     display: none;
   }
+
   .nav-container {
     width: 100vw;
-  }
-}
-
-@media screen and (max-width: 300px) {
-  .nav-items-container {
-    gap: 2rem;
   }
 }
