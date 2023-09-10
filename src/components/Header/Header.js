@@ -15,7 +15,7 @@ const Header = () => {
         <Link to="/" className={style["link"]}>
           <div>
             <img
-              src={APP}
+              src={APP_LOGO}
               alt="Have
         yum"
               width={40}
