@@ -16,6 +16,7 @@
   margin: auto;
   flex-wrap: wrap;
   gap: 3rem;
+  margin-top: 1rem;
 }
 
 .button-container {

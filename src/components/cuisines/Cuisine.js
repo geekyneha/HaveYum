@@ -43,7 +43,7 @@ const Cuisine = () => {
       <div className={style["cuisine"]} ref={cuisineContainer}>
         {cuisines.map((cuisine) => (
           <div key={cuisine.id}>
-            <img src={cuisine.imgUrl} alt={cuisine.name} width={150} className={style["cuisine-img"]}/>
+            <img src={cuisine.imgUrl} alt={cuisine.name}  className={style["cuisine-img"]}/>
           </div>
         ))}
       </div>
