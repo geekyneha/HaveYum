@@ -33,8 +33,8 @@
 }
 
 .cuisine-img {
-    width: 130px;
-  }
+  width: 130px;
+}
 
 /* Media Query for small device */
 @media screen and (max-width: 480px) {
