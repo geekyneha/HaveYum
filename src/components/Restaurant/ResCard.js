@@ -2,7 +2,7 @@ import React from "react";
 import style from "./res-card.module.css";
 import { CDN_URL } from "../../utils/constants";
 import { useNavigate } from "react-router-dom";
-
+import { AiFillStar } from "react-icons/ai";
 const ResCard = ({ resData }) => {
   const {
     name,
@@ -39,9 +39,15 @@ const ResCard = ({ resData }) => {
         <p className={style["delivery-time"]}>{deliveryTime} min</p>
       </div>
       <div className={style.content}>
-        <h3 className={style.restaurant}>{name}</h3>
+        <div className={style["name-rating"]}>
+          <h3 className={style.restaurant}>{name}</h3>{" "}
+          <div className={style["rating"]}>
+            <AiFillStar className={style["rating-icon"]} />
+            {avgRating}
+          </div>
+        </div>
         <p className={style.cuisines}>{cuisines.join(", ")}</p>
-        {/* <div><div>{costForTwo}</div><div>{avgRating}</div></div> */}
+        <div>₹{costForTwo / 100} For Two</div>
 
         <hr />
         <div className={style["max-safety"]}>

@@ -18,16 +18,32 @@
   border-radius: 15px;
   position: relative;
 }
+.name-rating {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+}
 .restaurant {
   font-size: 1.2rem;
   margin: 1rem 0;
   font-weight: 500;
   margin: 0;
 }
+.rating {
+  padding: 0.3rem 0.5rem;
+  color: #20963c;
+  border: 1px solid #f0f0f0;
+  background: white;
+  border-radius: 5px;
+  width: 60px;
+}
+.rating-icon {
+  margin-right: 0.3rem;
+}
 .cuisines {
-  font-size: 1.2rem;
+  font-size: small;
   color: #5d5d5d;
-  margin: 0;
+  margin: 0.5rem 0;
 }
 .promoted {
   position: absolute;
@@ -45,7 +61,7 @@
   bottom: 0;
   background-color: #266fef;
   color: #fff;
-  padding: 1px 6px;
+  padding: 1px 10px;
 }
 .delivery-time {
   position: absolute;
@@ -61,7 +77,6 @@
 }
 .max-safety {
   display: flex;
-  padding: 10px 5px;
 }
 
 .container {
@@ -92,7 +107,7 @@
 }
 .about-safety {
   color: #717070;
-  font-size: 1rem;
+  font-size: small;
 }
 
 @media screen and (max-width: 300px) {
