@@ -21,11 +21,11 @@
   margin: 0.5rem 1rem;
   display: flex;
   flex-wrap: wrap;
-  
+
   
 }
 /* Media Query for Medium and small Devices */
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 900px) {
   .search {
     flex-direction: column;
   }

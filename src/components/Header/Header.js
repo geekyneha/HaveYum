@@ -28,7 +28,7 @@ const Header = () => {
           <Link to="/" className={style["link"]}>
             
             <li className={style["nav-item"]}>
-              <span className={style["d-none"]}> Home</span> <AiOutlineHome className={style["icon"]} />
+              <span className={style["d-none"]}> Home</span> <AiOutlineHome  />
             </li>
           </Link>
           <li className={style["nav-item"]}>
