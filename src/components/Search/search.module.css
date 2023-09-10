@@ -12,6 +12,7 @@
 .search-container {
   position: relative;
   width: fit-content;
+  margin-bottom: 1rem;
 }
 .button {
   padding: 1rem 2rem;
