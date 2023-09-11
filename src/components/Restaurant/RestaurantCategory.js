@@ -2,11 +2,9 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import style from "./restaurant-ctegory.module.css";
 import ItemList from "./ItemList";
 import { useState } from "react";
-const RestaurantCategory = ({ data }) => {
-  const [showItem, setShowItem] = useState(false);
-
+const RestaurantCategory = ({ data, showItem, setShowIndex }) => {
   const showItems = () => {
-    setShowItem(!showItem);
+    setShowIndex(!showItem);
   };
   return (
     // header

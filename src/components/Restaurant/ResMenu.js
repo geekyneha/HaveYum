@@ -8,10 +8,12 @@ import { AiFillStar } from "react-icons/ai";
 import { FSSAI_IMG } from "../../utils/constants.js";
 import useRestaurantMenu from "../../hooks/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
+import { useState } from "react";
 
 const ResMenu = () => {
   const { resId } = useParams();
   const resInfo = useRestaurantMenu(resId);
+  const [showIndex, setShowIndex] = useState(null);
 
   if (resInfo == null) return <div>Loading...</div>;
   console.log(resInfo);
@@ -91,7 +93,13 @@ const ResMenu = () => {
         <div className={style["menu"]}>
           {categories.map((card, index) => (
             <div key={index} className={style["accordion"]}>
-              <RestaurantCategory data={card?.card?.card} />
+              <RestaurantCategory
+                data={card?.card?.card}
+                showItem={index === showIndex}
+                setShowIndex={() =>
+                  setShowIndex(index === showIndex ? null : index)
+                }
+              />
             </div>
           ))}
         </div>
