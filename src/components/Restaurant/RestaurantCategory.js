@@ -10,8 +10,8 @@ const RestaurantCategory = ({ data, showItem, setShowIndex }) => {
     // header
 
     <div>
-      <div className={style["header"]} onClick={showItems}>
-        <div className={style["accordion-header"]}>
+      <div className={style["header"]}>
+        <div className={style["accordion-header"]} onClick={showItems}>
           <div className={style["item-category"]}>
             {data.title} ({data.itemCards.length})
           </div>
