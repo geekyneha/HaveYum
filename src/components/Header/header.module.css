@@ -38,7 +38,17 @@ nav links  */
   text-decoration: none;
   color: #e12830;
 }
-
+.item-count{
+  font-size: small;
+  background-color:  #e12830;
+  color: white;
+  position: relative;
+  padding:2px 6px;
+  border-radius: 50%;
+  bottom: 13px;
+  right: 6px;
+  font-weight: bold;
+}
 /* Media Query for small Devices */
 
 @media screen and (max-width: 786px) {
