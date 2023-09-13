@@ -17,6 +17,9 @@
   justify-content: space-between;
   margin-top: 2rem;
 }
+.accordion {
+  background-color: #999aa2;
+}
 .cuisines {
   margin: 0;
   font-size: small;
