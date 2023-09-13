@@ -3,9 +3,17 @@ import style from './item-list.module.css'
 import { BsCircleFill } from "react-icons/bs";
 import { GoTriangleUp } from "react-icons/go";
 import { CDN_URL } from '../../utils/constants';
+import { useDispatch } from 'react-redux';
+import { addItems } from '../../Redux/cartSlice';
 
 
 const ItemList = ({items}) => {
+  const dispatch = useDispatch()
+  const handleAddItem =()=>{
+
+    dispatch(addItems("burger"))
+
+  }
   return (
     <div>
         {items.map((item, index) => (
@@ -46,11 +54,13 @@ const ItemList = ({items}) => {
           )}
           <div className={style["button-container"]}>
             {" "}
-            <button
+            <button onClick={handleAddItem}
               className={
                 item.card.info.imageId
                   ? style["add-button"]
                   : style["add-btn"]
+
+                  
               }
             >
               ADD
