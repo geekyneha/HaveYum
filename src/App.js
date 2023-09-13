@@ -4,7 +4,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "./Pages/About/About";
 import Body from "./components/Body/Body.js";
 import Error from "./Pages/Error/Error";
-
 import ResMenu from "./components/Restaurant/ResMenu";
 
 // const ResMenu = lazy(() => import("./components/Restaurant/ResMenu"));
