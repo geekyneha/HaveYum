@@ -5,6 +5,7 @@ import About from "./Pages/About/About";
 import Body from "./components/Body/Body.js";
 import Error from "./Pages/Error/Error";
 import ResMenu from "./components/Restaurant/ResMenu";
+import Cart from "./components/Cart/Cart";
 
 // const ResMenu = lazy(() => import("./components/Restaurant/ResMenu"));
 
@@ -25,6 +26,10 @@ const App = () => {
         {
           path: "/restaurant/:resId",
           element: <ResMenu />,
+        },
+        {
+          path: "/cart",
+          element: <Cart />,
         },
       ],
       errorElement: <Error />,
