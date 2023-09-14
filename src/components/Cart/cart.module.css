@@ -1,0 +1,33 @@
+.add-to-cart {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f0f0f0;
+  padding: 1rem 0;
+}
+
+.cart {
+  width: 300px;
+  background-color: white;
+  margin: auto;
+  padding: 2rem;
+}
+.items {
+  display: flex;
+  justify-content: space-between;
+}
+.restaurant-details {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+.item-total,
+.total,
+.delivery,
+.platform-fee {
+  display: flex;
+  justify-content: space-between;
+  line-height: 2;
+}
+.delivery {
+  border-bottom: 1px dashed #f0f0f0;
+}
