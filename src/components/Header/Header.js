@@ -9,9 +9,8 @@ import { Link } from "react-router-dom";
 import { APP_LOGO } from "../../utils/constants";
 import { useSelector } from "react-redux";
 
-
 const Header = () => {
-  const cart = useSelector((state)=>state.cart.items);
+  const cart = useSelector((state) => state.cart.items);
   return (
     <nav className={style["navbar"]}>
       <div className={style["nav-container"]}>
@@ -40,9 +39,12 @@ const Header = () => {
             <span className={style["d-none"]}> dish Craft</span> <BiDish />
           </li>
 
-          <li className={style["nav-item"]}>
-            <span className={style["d-none"]}>Cart </span> <FiShoppingBag /><span className={style["item-count"]}>{cart.length}</span>
-          </li>
+          <Link to="/cart" className={style["link"]}>
+            <li className={style["nav-item"]}>
+              <span className={style["d-none"]}>Cart </span> <FiShoppingBag />
+              <span className={style["item-count"]}>{cart.length}</span>
+            </li>
+          </Link>
           <li className={style["nav-item"]}>
             <span className={style["d-none"]}>Sign up</span> <MdPerson2 />
           </li>
