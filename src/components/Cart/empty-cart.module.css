@@ -1,0 +1,18 @@
+.empty-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 80vh;
+  background-color: #fff;
+}
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  color: white;
+  background-color: #e12830;
+  margin: 0 0.3rem;
+  border-radius: 10px;
+  border: 1px solid #e12830;
+}
