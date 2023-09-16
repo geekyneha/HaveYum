@@ -9,66 +9,69 @@ import { addItems } from '../../Redux/cartSlice';
 
 const ItemList = ({items}) => {
   const dispatch = useDispatch()
-  const handleAddItem =()=>{
+  const handleAddItem =(item)=>{
 
-    dispatch(addItems("burger"))
+    dispatch(addItems(item))
 
   }
   return (
     <div>
-        {items.map((item, index) => (
-      <div className={style["dish-container"]} key={index}>
-        <div>
-          {item.card.info.isVeg === 1 ? (
-            <div className={style["veg"]}>
-              <BsCircleFill fill="green" size={10} />
-            </div>
-          ) : (
-            <div className={style["non-veg"]}>
-              <GoTriangleUp fill="red" />
-            </div>
-          )}
-          <h4 className={style["dish"]}>
-            {item.card.info.name}
-          </h4>
-          <h5 className={style["price"]}>
-            ₹
-            {item.card.info.defaultPrice / 100 ||
-              item.card.info.price / 100}
-          </h5>
-          <p className={style["detail"]}>
-            {item.card.info.description}
-          </p>
-        </div>
-
-        <div>
-          {item.card.info.imageId ? (
-            <img
-              src={CDN_URL + item.card.info.imageId}
-              alt="dish"
-              className={style["dish-image"]}
-              width={110}
-            />
-          ) : (
-            ""
-          )}
-          <div className={style["button-container"]}>
-            {" "}
-            <button onClick={handleAddItem}
-              className={
-                item.card.info.imageId
-                  ? style["add-button"]
-                  : style["add-btn"]
-
-                  
-              }
-            >
-              ADD
-            </button>
+        {items.map((item, index) => {
+          const {imageId,name,description,isVeg,price,defaultPrice}= item.card.info;
+          return (  <div className={style["dish-container"]} key={index}>
+          <div>
+            {isVeg === 1 ? (
+              <div className={style["veg"]}>
+                <BsCircleFill fill="green" size={10} />
+              </div>
+            ) : (
+              <div className={style["non-veg"]}>
+                <GoTriangleUp fill="red" />
+              </div>
+            )}
+            <h4 className={style["dish"]}>
+              {name}
+            </h4>
+            <h5 className={style["price"]}>
+              ₹
+              {defaultPrice / 100 ||
+                price / 100}
+            </h5>
+            <p className={style["detail"]}>
+             {description}
+            </p>
           </div>
-        </div>
-      </div>
-    ))
+  
+          <div>
+            {imageId ? (
+              <img
+                src={CDN_URL + imageId}
+                alt="dish"
+                className={style["dish-image"]}
+                width={110}
+              />
+            ) : (
+              ""
+            )}
+            <div className={style["button-container"]}>
+              <button onClick={()=>handleAddItem(item)}
+                className={
+                  item.card.info.imageId
+                    ? style["add-button"]
+                    : style["add-btn"]
+  
+                    
+                }
+              >
+                ADD
+              </button>
+            </div>
+          </div>
+        </div>)
+        }
+          
+    
+    )
   }
     </div>
   )
