@@ -1,9 +1,9 @@
-import React from "react";
-import style from "./cart.module.css";
-import { useSelector, useDispatch } from "react-redux";
-import { CDN_URL } from "../../utils/constants";
-import { clearCart } from "../../Redux/cartSlice";
-import EmptyCart from "./EmptyCart";
+import React from 'react';
+import style from './cart.module.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { CDN_URL } from '../../utils/constants';
+import { clearCart } from '../../Redux/cartSlice';
+import EmptyCart from './EmptyCart';
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
@@ -14,13 +14,13 @@ const Cart = () => {
   };
   console.log(cartItems);
   return (
-    <div className={style["add-to-cart"]}>
+    <div className={style['add-to-cart']}>
       {cartItems.length === 0 ? (
         <EmptyCart />
       ) : (
-        <div className={style["cart"]}>
+        <div className={style['cart']}>
           <button onClick={handleClearCart}>Clear Cart</button>
-          <div className={style["restaurant-details"]}>
+          <div className={style['restaurant-details']}>
             <div></div>
             <div>
               <div>name</div>
@@ -29,9 +29,13 @@ const Cart = () => {
           </div>
 
           {cartItems.map((item, index) => (
-            <div className={style["items"]}>
+            <div className={style['items']}>
               <div>
-                <img src={CDN_URL + item.card.info.imageId} alt="" width={20} />
+                <img
+                  src={CDN_URL + item.card.info.imageId}
+                  alt=""
+                  width={20}
+                />
               </div>
               <div>{item.card.info.name}</div>
               <button>Add</button>
@@ -43,21 +47,21 @@ const Cart = () => {
             </div>
           ))}
 
-          <div className={style["bill-detail"]}>
-            <div className={style["item-total"]}>
+          <div className={style['bill-detail']}>
+            <div className={style['item-total']}>
               <div>item total</div>
               <div>price</div>
             </div>
-            <div className={style["delivery"]}>
+            <div className={style['delivery']}>
               <div>Delivery fee </div>
               <div>price</div>
             </div>
-            <div className={style["platform-fee"]}>
+            <div className={style['platform-fee']}>
               <div>Platform fee</div>
               <div>price</div>
             </div>
             <hr />
-            <div className={style["total"]}>
+            <div className={style['total']}>
               <div>To pay</div>
               <div>price</div>
             </div>
