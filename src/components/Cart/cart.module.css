@@ -30,3 +30,26 @@
 .delivery {
   border-bottom: 1px dashed #f0f0f0;
 }
+.non-veg {
+  border: 1px solid red;
+  width: fit-content;
+  margin: 1rem 0;
+}
+.veg {
+  border: 1px solid var(--btn-color);
+  padding: 0 0.2rem 0;
+  width: fit-content;
+  margin: 1rem 0;
+}
+.cut {
+  font-style: italic;
+  text-decoration: line-through;
+  color: lightgray;
+}
+.btn {
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.2rem;
+}

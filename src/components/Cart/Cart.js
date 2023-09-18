@@ -4,7 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { CDN_URL } from '../../utils/constants';
 import { clearCart } from '../../Redux/cartSlice';
 import EmptyCart from './EmptyCart';
-
+import { BsCircleFill } from 'react-icons/bs';
+import { GoTriangleUp } from 'react-icons/go';
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
   const dispatch = useDispatch();
@@ -19,7 +20,12 @@ const Cart = () => {
         <EmptyCart />
       ) : (
         <div className={style['cart']}>
-          <button onClick={handleClearCart}>Clear Cart</button>
+          <button
+            onClick={handleClearCart}
+            className={style['btn']}
+          >
+            Clear Cart
+          </button>
           <div className={style['restaurant-details']}>
             <div></div>
             <div>
@@ -31,14 +37,23 @@ const Cart = () => {
           {cartItems.map((item, index) => (
             <div className={style['items']}>
               <div>
-                <img
-                  src={CDN_URL + item.card.info.imageId}
-                  alt=""
-                  width={20}
-                />
+                <div>
+                  {item.card.info.isVeg === 1 ? (
+                    <div className={style['veg']}>
+                      <BsCircleFill
+                        fill="green"
+                        size={10}
+                      />
+                    </div>
+                  ) : (
+                    <div className={style['non-veg']}>
+                      <GoTriangleUp fill="red" />
+                    </div>
+                  )}
+                </div>
               </div>
               <div>{item.card.info.name}</div>
-              <button>Add</button>
+
               <div>
                 ₹
                 {item.card.info.price / 100 ||
@@ -58,7 +73,10 @@ const Cart = () => {
             </div>
             <div className={style['platform-fee']}>
               <div>Platform fee</div>
-              <div>price</div>
+              <div>
+                <span className={style['cut']}> ₹5</span>
+                <span> ₹2</span>
+              </div>
             </div>
             <hr />
             <div className={style['total']}>
