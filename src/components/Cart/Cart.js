@@ -6,6 +6,7 @@ import { clearCart } from '../../Redux/cartSlice';
 import EmptyCart from './EmptyCart';
 import { BsCircleFill } from 'react-icons/bs';
 import { GoTriangleUp } from 'react-icons/go';
+import { RiDeleteBin5Line } from 'react-icons/ri';
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ const Cart = () => {
             onClick={handleClearCart}
             className={style['btn']}
           >
-            Clear Cart
+           <RiDeleteBin5Line size={23} />
           </button>
           <div className={style['restaurant-details']}>
             <div></div>
