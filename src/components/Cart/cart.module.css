@@ -1,7 +1,6 @@
 .add-to-cart {
  height: 100vh;
 }
-
 .cart {
   display: flex;
   flex-direction: column;
