@@ -6,6 +6,7 @@ import Body from "./components/Body/Body.js";
 import Error from "./Pages/Error/Error";
 import ResMenu from "./components/Restaurant/ResMenu";
 import Cart from "./components/Cart/Cart";
+import Auth from './components/Auth/Auth'
 
 // const ResMenu = lazy(() => import("./components/Restaurant/ResMenu"));
 
@@ -33,7 +34,12 @@ const App = () => {
         },
       ],
       errorElement: <Error />,
-    },
+      
+
+    },{
+      path:"/login",
+      element:<Auth />
+    }
   ]);
   return (
     <>
