@@ -41,8 +41,8 @@ const Offers = () => {
         </div>
       </div>
       <div className={style["offers"]} ref={offersContainer}>
-        {offers.map((offer) => (
-          <div className={offer.imgId}>
+        {offers.map((offer,index) => (
+          <div className={offer.imgId} key={index}>
             <img
               src={offer.imgUrl}
               alt="offers"
