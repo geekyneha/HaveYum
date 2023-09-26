@@ -6,7 +6,8 @@ import Body from "./components/Body/Body.js";
 import Error from "./Pages/Error/Error";
 import ResMenu from "./components/Restaurant/ResMenu";
 import Cart from "./components/Cart/Cart";
-import Auth from './components/Auth/Auth'
+import SignUp from "./components/Auth/Signup/SignUp";
+import Login from "./components/Auth/Login/Login";
 
 // const ResMenu = lazy(() => import("./components/Restaurant/ResMenu"));
 
@@ -38,7 +39,11 @@ const App = () => {
 
     },{
       path:"/login",
-      element:<Auth />
+      element:<Login />
+    },
+    {
+      path:"/signup",
+      element:<SignUp />
     }
   ]);
   return (
