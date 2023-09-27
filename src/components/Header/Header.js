@@ -41,10 +41,14 @@ const Header = () => {
           {/* <li className={style["nav-item"]}>
             <span className={style["d-none"]}> About</span> <TbListDetails />
           </li> */}
-          <li className={style['nav-item']}>
-            <span className={style['d-none']}> dish Craft</span> <BiDish />
-          </li>
-
+          <Link
+            to="/dishcraft"
+            className={style['link']}
+          >
+            <li className={style['nav-item']}>
+              <span className={style['d-none']}> dish Craft</span> <BiDish />
+            </li>
+          </Link>
           <Link
             to="/cart"
             className={style['link']}
@@ -54,9 +58,14 @@ const Header = () => {
               <span className={style['item-count']}>{cart.length}</span>
             </li>
           </Link>
-          <li className={style['nav-item']}>
-            <span className={style['d-none']}>Sign up</span> <MdPerson2 />
-          </li>
+          <Link
+            to="/signup"
+            className={style['link']}
+          >
+            <li className={style['nav-item']}>
+              <span className={style['d-none']}>Sign up</span> <MdPerson2 />
+            </li>
+          </Link>
         </div>
       </div>
     </nav>
