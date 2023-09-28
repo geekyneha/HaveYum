@@ -21,8 +21,7 @@ const SignUp = () => {
       navigate('/');
     } catch (err) {
       setError(err.message);
-      console.log(err.message)
-
+      console.log(err.message);
     }
   };
 
@@ -30,7 +29,7 @@ const SignUp = () => {
     <div className={style.signup}>
       <div className={style.signupContainer}>
         <div>
-          <h3>signup</h3>
+          <h3>Create Account</h3>
         </div>
         <form
           onSubmit={handleSubmit}
@@ -66,17 +65,14 @@ const SignUp = () => {
             <p className={style.error}>{errors.password}</p>
           )} */}
           </div>
-<div>
-{error!=="" && <p  className={style.error }>{error}</p>}
-</div>
+          <div>{error !== '' && <p className={style.error}>{error}</p>}</div>
           <button
             className={style.button}
             type="submit"
-          
           >
-            Sign up
+            Create Account
           </button>
-          <div>
+          <div className={style['already-account']}>
             Already a customer ?{' '}
             <span
               className={style.login}
@@ -87,7 +83,6 @@ const SignUp = () => {
           </div>
         </form>
       </div>
-     
     </div>
   );
 };
