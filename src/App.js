@@ -34,6 +34,10 @@ const App = () => {
           path: '/cart',
           element: <Cart />,
         },
+        {
+          path: '/dishcraft',
+          element: <Layout />,
+        },
       ],
       errorElement: <Error />,
     },
@@ -44,10 +48,6 @@ const App = () => {
     {
       path: '/signup',
       element: <SignUp />,
-    },
-    {
-      path: '/dishcraft',
-      element: <Layout />,
     },
   ]);
   return (
