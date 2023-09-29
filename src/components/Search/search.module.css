@@ -4,6 +4,7 @@
   border-radius: 24px;
   border: none;
   font-size: 1rem;
+  padding: 1rem;
 }
 .search:focus {
   outline: none;
