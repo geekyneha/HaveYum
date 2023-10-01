@@ -36,7 +36,6 @@ const SignUp = () => {
           autoComplete="off"
         >
           <ToastContainer />
-
           <div className={style.inputContainer}>
             <input
               type="text"
@@ -50,7 +49,6 @@ const SignUp = () => {
             <p className={style.error}>{errors.email}</p>
           )} */}
           </div>
-
           <div className={style.inputContainer}>
             <input
               type="text"
