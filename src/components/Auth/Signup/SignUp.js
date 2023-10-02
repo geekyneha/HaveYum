@@ -13,10 +13,8 @@ const SignUp = () => {
   const [error, setError] = useState('');
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-
       setError('');
       navigate('/');
     } catch (err) {
